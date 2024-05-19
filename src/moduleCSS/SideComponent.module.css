@@ -1,0 +1,74 @@
+.mainContainer {
+  flex: 1;
+  padding: 0rem 3rem;
+  text-align: left;
+  color: white;
+  z-index: 100;
+  background-color: rgb(24, 24, 24);
+  position: relative;
+}
+.mainContainer h1{
+    font-size: 3.8rem;
+}
+.mainContainer h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+.mainContainer h4 {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+.mainContainer span {
+  font-size: 1.3rem;
+}
+.mainContainer p {
+  margin: -1rem 0 0 0;
+  font-weight: bold;
+}
+.text {
+  margin-top: -1rem;
+  max-width: 20rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.people {
+  height: 3rem;
+}
+.events {
+  width: 28rem;
+  height: 14rem;
+  margin-left: -1rem;
+}
+.barcode {
+  width: 7rem;
+  margin-top: 3rem;
+}
+.joinBtn {
+  position: absolute;
+  bottom: 3rem;
+  right: 4rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 5rem;
+  background-color: rgb(251, 206, 70);
+}
+.collectiblesContainer {
+  display: flex;
+  width: 28rem;
+  overflow-x: auto;
+}
+.collectiblesImg {
+  width: 10rem;
+  margin-right: 1rem;
+}
+.extraMargin {
+    margin: 5rem 0 -1.5rem 0;
+}
+.noMargin{
+    margin: 2rem 0 -1.5rem 0;
+}

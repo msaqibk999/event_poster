@@ -1,0 +1,213 @@
+@keyframes varyWidth1 {
+  0%,
+  100% {
+    width: 22rem;
+  }
+  50% {
+    width: 13rem;
+  }
+}
+@keyframes varyWidth2 {
+  0%,
+  100% {
+    width: 29rem;
+  }
+  50% {
+    width: 18rem;
+  }
+}
+@keyframes varyWidth3 {
+  0%,
+  100% {
+    width: 10rem;
+  }
+  50% {
+    width: 18rem;
+  }
+}
+@keyframes varyWidth4 {
+  0%,
+  100% {
+    width: 16rem;
+  }
+  50% {
+    width: 12rem;
+  }
+}
+@keyframes varyWidth5 {
+  0%,
+  100% {
+    width: 12rem;
+  }
+  50% {
+    width: 16rem;
+  }
+}
+@keyframes varyWidth6 {
+  0%,
+  100% {
+    width: 8rem;
+  }
+  50% {
+    width: 11.5rem;
+  }
+}
+
+.mainContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff4dc;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+.astrixLogo {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  width: 15rem;
+}
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 6rem;
+}
+.contentContainer strong {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.image {
+  height: inherit;
+}
+.animate {
+  overflow: hidden;
+  height: 4rem;
+  margin: 0 1rem;
+}
+.animate1 {
+  width: 13rem;
+  animation: varyWidth1 4s infinite ease-in-out;
+}
+.animate2 {
+  width: 18rem;
+  animation: varyWidth2 4s infinite ease-in-out;
+}
+.animate3 {
+  width: 18rem;
+  animation: varyWidth3 4s infinite ease-in-out;
+}
+.animate4 {
+  width: 16rem;
+  animation: varyWidth4 4s infinite ease-in-out;
+}
+.animate5 {
+  width: 12rem;
+  animation: varyWidth5 4s infinite ease-in-out;
+}
+.animate6 {
+  width: 11.5rem;
+  animation: varyWidth6 4s infinite ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainContainer {
+    font-size: 2rem;
+  }
+  .animate {
+    height: 4rem;
+  }
+  .contentContainer{
+    margin-top: 0;
+    width: 62vw;
+  }
+  @keyframes varyWidth1 {
+    0%,
+    100% {
+      width: 12rem;
+    }
+    50% {
+      width: 7rem;
+    }
+  }
+  @keyframes varyWidth2 {
+    0%,
+    100% {
+      width: 14rem;
+    }
+    50% {
+      width: 8rem;
+    }
+  }
+  @keyframes varyWidth3 {
+    0%,
+    100% {
+      width: 4rem;
+    }
+    50% {
+      width: 8rem;
+    }
+  }
+  @keyframes varyWidth4 {
+    0%,
+    100% {
+      width: 8rem;
+    }
+    50% {
+      width: 6rem;
+    }
+  }
+  @keyframes varyWidth5 {
+    0%,
+    100% {
+      width: 8rem;
+    }
+    50% {
+      width: 6rem;
+    }
+  }
+  @keyframes varyWidth6 {
+    0%,
+    100% {
+      width: 3rem;
+    }
+    50% {
+      width: 6.25rem;
+    }
+  }
+  .astrixLogo {
+    width: 12rem;
+  }
+  .animate1 {
+    width: 7rem;
+    animation: varyWidth1 4s infinite ease-in-out;
+  }
+  .animate2 {
+    width: 8rem;
+    animation: varyWidth2 4s infinite ease-in-out;
+  }
+  .animate3 {
+    width: 4rem;
+    animation: varyWidth3 4s infinite ease-in-out;
+  }
+  .animate4 {
+    width: 8rem;
+    animation: varyWidth4 4s infinite ease-in-out;
+  }
+  .animate5 {
+    width: 6rem;
+    animation: varyWidth5 4s infinite ease-in-out;
+  }
+  .animate6 {
+    width: 6.25rem;
+    animation: varyWidth6 4s infinite ease-in-out;
+  }
+}

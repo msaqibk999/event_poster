@@ -9,9 +9,9 @@ import logo from "../media/logo.png";
 import Toggle from "./Toggle";
 import CardSlider from "./CardSlider";
 import styles from "../moduleCSS/MainComponent.module.css";
+import MiddleStrip from "./MiddleStrip";
 
-function MainComponent() {
-  const [state, setState] = useState(true);
+function MainComponent({state, setState}) {
   const [images, setImages] = useState([img1, img2, img3]);
 
   useEffect(() => {
@@ -27,12 +27,9 @@ function MainComponent() {
       <div className={styles.logoContainer}>
         <img src={logo} alt="" className={styles.logo} /> <span>Astrix.</span>
       </div>
-      <section className={styles.sliderContainer}>
         <CardSlider state={state} images={images} />
-      </section>
-      <div>
         <Toggle setState={setState} />
-      </div>
+        <MiddleStrip />
       <div className={styles.background}>
         ASTR IX
         <br />

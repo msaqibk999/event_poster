@@ -1,11 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../moduleCSS/CardSlider.module.css";
+import { GrLocation } from "react-icons/gr";
 
 function CardSlider({ state, images }) {
   const [translateX, setTranslateX] = useState(0);
   const [focusedIndex, setFocusedIndex] = useState(0);
+  const [secondFocusedIndex, setSecondFocusedIndex] = useState(1);
   const headerRef = useRef(null);
   const headerRef2 = useRef(null);
+  const sliderWidth = window.innerWidth > 1024 ? 80 : 60;
+  const cardWidth = window.innerWidth > 1024 ? 25 : 18;
   const items = (
     <>
       <div className={styles.empty}></div>
@@ -13,8 +17,9 @@ function CardSlider({ state, images }) {
         <div
           key={index}
           className={`${styles.imageContainer} ${
-            focusedIndex === index ? "focused" : ""
-          }`}
+            index === focusedIndex ? "focused" : ""
+          }
+          ${index === secondFocusedIndex ? "second-focused" : ""}`}
         >
           <img src={img} alt="broken" className={styles.image} />
           <div
@@ -26,7 +31,7 @@ function CardSlider({ state, images }) {
               <>
                 <strong>Event Name</strong>
                 <span>
-                  <i className="fa-solid fa-location-dot"></i> &nbsp; Location
+                  <GrLocation /> &nbsp; Location
                 </span>
               </>
             )}
@@ -39,58 +44,74 @@ function CardSlider({ state, images }) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTranslateX((prev) => {
-        const nextTranslateX = prev + 25 + 1.5;
+        const maxIndex = images.length - 1;
+        const nextTranslateX = prev + cardWidth + 1.5;
         const newIndex =
-          nextTranslateX > 80 ? 0 : Math.floor(nextTranslateX / 25);
+          nextTranslateX > sliderWidth
+            ? 0
+            : Math.floor(nextTranslateX / cardWidth);
         setFocusedIndex(newIndex);
-        return nextTranslateX > 80 ? -1 : nextTranslateX;
+        setSecondFocusedIndex(
+          newIndex + 1 > maxIndex ? maxIndex : newIndex + 1
+        );
+        return nextTranslateX > sliderWidth ? -1 : nextTranslateX;
       });
     }, 2000);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [images.length, cardWidth, sliderWidth]);
 
   useEffect(() => {
     setTranslateX(0);
     setFocusedIndex(0);
+    setSecondFocusedIndex(1);
   }, [images]);
 
   useEffect(() => {
     const header = headerRef.current;
     const header2 = headerRef2.current;
     if (header) {
-      const focusedImage = document.querySelector(".focused");
+      const focusedImage = document?.querySelector(".focused");
+      const focusedImage2 = document?.querySelector(".second-focused");
       if (focusedImage) {
-        const rect = focusedImage.getBoundingClientRect();
-        if (rect.left > 0) {
-          header.style.left = `${rect.left - 420}px`;
-          header2.style.left = `${rect.left}px`;
+        const rect1 = focusedImage?.getBoundingClientRect();
+        const rect2 = focusedImage2?.getBoundingClientRect();
+        if (rect1?.left > 0) {
+          header.style.left = `${rect1?.left - 420}px`;
         } else {
-          header.style.left = "224px";
-          header2.style.left = "645px";
+          header.style.left = "240px";
+        }
+        if (rect2?.left > 0) {
+          header2.style.left = `${rect2?.left - 420}px`;
+        } else {
+          header2.style.left = "700px";
         }
 
-        if(focusedIndex === images.length - 1){
-          console.log("here")
-          header2.style.display = "none";
-        }else{
-          header2.style.display = "flex";
+        if (focusedIndex === images.length - 1) {
+          header2.classList.remove("showAnimation");
+          header2.classList.add("hideAnimation");
+        } else if (focusedIndex === 0 || rect2?.left > rect1?.left) {
+          header2.classList.remove("hideAnimation");
+          header2.classList.add("showAnimation");
         }
       }
     }
-  }, [focusedIndex]);
+  }, [focusedIndex, images.length]);
 
   return (
     <div className={styles.mainContainer}>
       {!state && (
         <>
-          <div ref={headerRef} className={styles.header}>
+          <div ref={headerRef} className={`${styles.header} ${styles.header1}`}>
             <strong>Lunar Palace:</strong>
             <span>(ft. Kanye West)</span>
           </div>
-          <div ref={headerRef2} className={styles.header2}>
+          <div
+            ref={headerRef2}
+            className={`${styles.header} ${styles.header2}`}
+          >
             <strong>Lunar Palace:</strong>
             <span>(ft. Kanye West)</span>
           </div>
