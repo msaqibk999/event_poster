@@ -1,0 +1,91 @@
+.mainContainer {
+  width: 50rem;
+  overflow: hidden;
+  margin-top: 6rem;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.imageContainer {
+  width: 25rem;
+  height: 40rem;
+  margin-right: 1rem;
+  position: relative;
+}
+.image {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
+.empty {
+  height: 40rem;
+  margin-right: 1rem;
+  padding: 0 6.25rem;
+}
+.focused {
+  transition: transform 0.3s ease;
+}
+.overImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  text-align: left;
+  padding: 4rem 1rem;
+}
+.overImage strong {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.overImage span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.overImage.hidden {
+  opacity: 0;
+}
+.header {
+  position: absolute;
+  left: 220px;
+  top: 100px;
+  color: white;
+  text-align: left;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.header2 {
+    position: absolute;
+    left: 643px;
+    top: 100px;
+    color: white;
+    text-align: left;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+.header strong{
+    font-size: 2rem;
+}
+.header span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.header2 strong{
+    font-size: 2rem;
+}
+.header2 span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+.mainContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+.logo{
+    height: 5rem;
+    width: 6rem;
+}
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.logoContainer span{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    color: rgb(251, 206, 70);
+}
+.sliderContainer{
+    height: 50rem;
+}
+.background{
+    white-space: pre-wrap;
+    position: absolute;
+    top: 7rem;
+    bottom: 8rem;
+    left: 2rem;
+    z-index: -1;
+    font-size: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 5rem;
+    font-weight: bolder;
+    color: rgb(85, 85, 85);
+    text-align: left;
+}
