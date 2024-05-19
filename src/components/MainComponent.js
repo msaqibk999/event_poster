@@ -11,9 +11,10 @@ import CardSlider from "./CardSlider";
 import styles from "../moduleCSS/MainComponent.module.css";
 import MiddleStrip from "./MiddleStrip";
 
-function MainComponent({state, setState}) {
+function MainComponent({ state, setState }) {
   const [images, setImages] = useState([img1, img2, img3]);
 
+  // useEffect for setting carousel content based on toggle
   useEffect(() => {
     if (state === false) {
       setImages([imgb1, img2, imgb3, img4]);
@@ -27,9 +28,12 @@ function MainComponent({state, setState}) {
       <div className={styles.logoContainer}>
         <img src={logo} alt="" className={styles.logo} /> <span>Astrix.</span>
       </div>
-        <CardSlider state={state} images={images} />
-        <Toggle setState={setState} />
-        <MiddleStrip />
+      {/* Card slider is the carousel for image display */}
+      <CardSlider state={state} images={images} />
+      {/* Toggle is the component to switch state of app from event/collection to collection/event */}
+      <Toggle setState={setState} />
+      {/* Middle strip is the middle purple line */}
+      <MiddleStrip />
       <div className={styles.background}>
         ASTR IX
         <br />

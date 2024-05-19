@@ -10,6 +10,8 @@ function CardSlider({ state, images }) {
   const headerRef2 = useRef(null);
   const sliderWidth = window.innerWidth > 1024 ? 80 : 60;
   const cardWidth = window.innerWidth > 1024 ? 25 : 18;
+
+  // Initializing the items to display in carousel
   const items = (
     <>
       <div className={styles.empty}></div>
@@ -41,6 +43,7 @@ function CardSlider({ state, images }) {
     </>
   );
 
+  // useEffect to handle the carousel scroll and updating focused item
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTranslateX((prev) => {
@@ -63,12 +66,14 @@ function CardSlider({ state, images }) {
     };
   }, [images.length, cardWidth, sliderWidth]);
 
+  // useEffect to handle the changes due to toggling
   useEffect(() => {
     setTranslateX(0);
     setFocusedIndex(0);
     setSecondFocusedIndex(1);
   }, [images]);
 
+  // useEffect to shift the headers to the top-left of focused and second-focused item
   useEffect(() => {
     const header = headerRef.current;
     const header2 = headerRef2.current;

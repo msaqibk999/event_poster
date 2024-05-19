@@ -11,6 +11,7 @@ import Astrix7 from "../media/Astrix7.png";
 import Astrix8 from "../media/Astrix8.png";
 
 export default function Astrix() {
+  // useEffect for targetting and pushing animation classes
   useEffect(() => {
     const ele = document.querySelector(".target-div")
     setTimeout(() => {
