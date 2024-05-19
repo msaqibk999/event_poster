@@ -17,11 +17,11 @@ function App() {
     }, 4000);
     setTimeout(() => {
       const showEle = document.querySelector(".container");
-      showEle.classList.add("move-up");
+      showEle?.classList.add("move-up");
     }, 4100);
     setTimeout(() => {
       const showEle = document.querySelector(".container");
-      showEle.classList.remove("move-up");
+      showEle?.classList.remove("move-up");
       setPreloader(false);
     }, 5000);
   }, []);

@@ -15,7 +15,7 @@ export default function Astrix() {
   useEffect(() => {
     const ele = document.querySelector(".target-div")
     setTimeout(() => {
-      ele.classList.add("move-up")
+      ele?.classList.add("move-up")
     }, 3500);
   },[])
   return (
