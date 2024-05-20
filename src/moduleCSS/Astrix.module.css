@@ -91,31 +91,39 @@
 .animate {
   overflow: hidden;
   height: 4rem;
-  margin: 0 1rem;
 }
 .animate1 {
   width: 13rem;
+  margin: 0 1rem;
   animation: varyWidth1 4s infinite ease-in-out;
 }
 .animate2 {
   width: 18rem;
+  margin-left: 1rem;
   animation: varyWidth2 4s infinite ease-in-out;
 }
 .animate3 {
   width: 18rem;
+  margin-right: 1rem;
   animation: varyWidth3 4s infinite ease-in-out;
 }
 .animate4 {
   width: 16rem;
+  margin: 0 1rem;
   animation: varyWidth4 4s infinite ease-in-out;
 }
 .animate5 {
   width: 12rem;
+  margin-left: 1rem;
   animation: varyWidth5 4s infinite ease-in-out;
 }
 .animate6 {
   width: 11.5rem;
+  margin-right: 1rem;
   animation: varyWidth6 4s infinite ease-in-out;
+}
+.margins{
+  margin: 0 1rem;
 }
 
 @media screen and (max-width: 1024px) {

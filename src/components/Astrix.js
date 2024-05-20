@@ -41,7 +41,7 @@ export default function Astrix() {
             <img src={Astrix3} alt="" className={`${style.image}`} />
           </div>
           BETWEEN
-          <div className={`${style.animate}`}>
+          <div className={`${style.animate} ${style.margins}`}>
             <img src={Astrix4} alt="" className={`${style.image}`} />
           </div>
           MUSIC
@@ -61,7 +61,7 @@ export default function Astrix() {
             <img src={Astrix7} alt="" className={`${style.image}`} />
           </div>
           ART
-          <div className={`${style.animate}`}>
+          <div className={`${style.animate} ${style.margins}`}>
             <img src={Astrix8} alt="" className={`${style.image}`} />
           </div>{" "}
           & COLLECTIONS
