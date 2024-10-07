@@ -45,3 +45,9 @@
 .move-up{
   animation: moveUp 1s forwards;
 }
+
+@media screen and (max-width: 900px) {
+  .container{
+    flex-direction: column;
+  }
+}

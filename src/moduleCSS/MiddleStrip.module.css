@@ -37,3 +37,9 @@
 .textContainer strong {
   font-size: 4rem;
 }
+
+@media screen and (max-width: 900px) {
+  .mainContainer {
+    display: none;
+  }
+}
